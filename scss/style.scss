@@ -35,11 +35,10 @@ body {
 
 .container {
     display: grid;
-    margin: 60px 30px;
+    margin: 5% 25%;
     grid-template-areas: "joinUs joinUs" "pricing whyUs";
     @media (max-width: $max_width_desktop) {
         grid-template-areas: "joinUs" "pricing" "whyUs";
-        width: 50%;
         margin: 10% 25%;
         .joinUs {
             grid-area: joinUs;
@@ -77,7 +76,7 @@ body {
     .pricing {
         grid-area: pricing;
         grid-gap: 1rem;
-        padding: 20px;
+        padding: 40px 0 40px 40px;
         background-color: $color_primary;
         h2 {
             color: #ffffff;
