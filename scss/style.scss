@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+//Layout
+$max_width_mobile: 375px;
+$max_width_desktop: 1440px;
+//colors
+//primary
+$color_primary: hsl(179,
+62%,
+43%);
+$color_secondary: hsl(71,
+73%,
+54%);
+//neutral
+$color_secondary_first: hsl(204,
+43%,
+93%);
+$color_terciary: hsl(218,
+22%,
+67%);
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+    background-color: $color_terciary;
+}
+
+.container {
+    display: grid;
+    margin: 60px 30px;
+    grid-template-areas: "joinUs" "pricing" "whyUs";
+    @media (min-width: $max_width_desktop) {
+        grid-template-areas: "joinUs joinUs" "pricing whyUs";
+        width: 50%;
+        margin: 10% 25%;
+        .joinUs {
+            grid-area: joinUs;
+        }
+        .pricing {
+            grid-area: pricing;
+        }
+        .whyUs {
+            grid-area: whyUs;
+        }
+    }
+    .joinUs,
+    .pricing,
+    .whyUs {
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: repeat(3, 1fr);
+    }
+    .joinUs {
+        grid-gap: 1rem;
+        padding: 20px;
+        background-color: #ffffff;
+        h2 {
+            color: $color_primary;
+        }
+        h3 {
+            color: $color_secondary;
+        }
+        p {
+            color: $color_terciary;
+            line-height: 1.8;
+        }
+    }
+    .pricing {
+        grid-gap: 1rem;
+        padding: 20px;
+        background-color: $color_primary;
+        h2 {
+            color: #ffffff;
+        }
+        h3 {
+            color: $color_terciary;
+            strong {
+                color: #ffffff;
+                font-size: xx-large;
+                margin-right: 10px;
+            }
+        }
+        h4 {
+            color: #88e0dd;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            width: 80%;
+            height: 50px;
+            background-color: $color_secondary;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .whyUs {
+        grid-gap: 1rem;
+        padding: 20px;
+        background-color: #4abebd;
+        h2 {
+            color: #ffffff;
+        }
+        ul {
+            li {
+                color: #88e0dd;
+            }
+        }
+    }
+}
